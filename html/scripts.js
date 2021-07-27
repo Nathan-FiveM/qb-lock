@@ -14,7 +14,7 @@ let g_start, g_end;
 let animation_loop;
 
 
-let needed = 3;
+let needed = 4;
 let streak = 0;
 
 
@@ -57,7 +57,7 @@ function init() {
     ctx.fillText(key_to_press, W / 2 - text_width / 2, H / 2 + 35);
 }
 
-function draw(seconds) {
+function draw(time) {
     if (typeof animation_loop !== undefined) clearInterval(animation_loop);
 
     g_start = getRandomInt(20,40) / 10;
@@ -69,7 +69,7 @@ function draw(seconds) {
 
     key_to_press = ''+getRandomInt(1,4);
 
-    time = seconds;
+    time = time;
 
     animation_loop = setInterval(animate_to, time);
 }
@@ -90,7 +90,7 @@ function correct(){
         clearInterval(animation_loop)
         endGame(true)
     }else{
-        draw();
+        draw(time);
     };
 }
 
@@ -134,7 +134,7 @@ function startGame(time){
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({}));
     streak = 0;
-    needed = 3;
+    needed = 4;
   }
   
   window.addEventListener("message", (event) => {
@@ -142,12 +142,12 @@ function startGame(time){
         if(event.data.value != null ){
             needed = event.data.value
         }else{
-            needed = 3
+            needed = 4
         }
         if(event.data.time != null ){
             time = event.data.time
         }else{
-            time = 20
+            time = 10
         }
       startGame(time)
     }

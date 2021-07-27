@@ -1,4 +1,5 @@
 QBCore = nil
+
 Citizen.CreateThread(function() 
     while true do
         Citizen.Wait(10)
@@ -8,13 +9,14 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
 local Result = nil
 local NUI_status = false
 
 RegisterNetEvent('kwk-lockpick:client:openLockpick')
 AddEventHandler('kwk-lockpick:client:openLockpick', function(circles, seconds, callback)
     lockpickCallback = callback
-    exports['qb-lockpick']:StartLockPickCircle(circles, seconds, callback) 
+    exports['qb-lockpick']:StartLockPickCircle(circles, seconds, callback)
 end)
 
 function StartLockPickCircle(circles, seconds, callback)
