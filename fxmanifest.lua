@@ -1,7 +1,7 @@
 fx_version 'bodacious'
 games { 'gta5' }
 
-author 'TH|Doran#1959 | Nathan#8860'
+author 'Leastjuh'
 description 'Lockpick Circle Mini-Game'
 version '1.0'
 

@@ -130,7 +130,7 @@ function startGame(time){
     let u = "fail";
         if(status)
             u = "success";
-    xhr.open("POST", `http://qb-lockpick/${u}`, true);
+    xhr.open("POST", `http://qb-lock/${u}`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({}));
     streak = 0;
@@ -147,8 +147,9 @@ function startGame(time){
         if(event.data.time != null ){
             time = event.data.time
         }else{
-            time = 10
+            time = 2
         }
+		console.log(event.data.time)
       startGame(time)
     }
   })
