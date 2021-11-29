@@ -1,18 +1,8 @@
-QBCore = nil
-Citizen.CreateThread(function() 
-    while true do
-        Citizen.Wait(10)
-        if QBCore == nil then
-            TriggerEvent("QBCore:GetObject", function(obj) QBCore = obj end)    
-            Citizen.Wait(200)
-        end
-    end
-end)
+local QBCore = exports['qb-core']:GetCoreObject()
 local Result = nil
 local NUI_status = false
 
-RegisterNetEvent('kwk-lockpick:client:openLockpick')
-AddEventHandler('kwk-lockpick:client:openLockpick', function(callback, circles)
+RegisterNetEvent('kwk-lockpick:client:openLockpick', function(callback, circles)
     lockpickCallback = callback
     exports['qb-lock']:StartLockPickCircle(total,circles) 
 end)
