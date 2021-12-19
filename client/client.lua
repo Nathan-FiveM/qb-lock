@@ -2,7 +2,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 local Result = nil
 local NUI_status = false
 
-RegisterNetEvent('kwk-lockpick:client:openLockpick', function(callback, circles)
+RegisterNetEvent('qb-lockpick:client:openLockpick', function(callback, circles)
     lockpickCallback = callback
     exports['qb-lock']:StartLockPickCircle(total,circles) 
 end)
