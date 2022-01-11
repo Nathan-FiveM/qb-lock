@@ -6,9 +6,11 @@ let H = canvas.height;
 let degrees = 0;
 let new_degrees = 0;
 let time = 0;
-let color = "#ffffff";
-let bgcolor = "#404b57";
+let color = "#ff0000";
+let txtcolor = "#ffffff";
+let bgcolor = "#404b58";
 let bgcolor2 = "#41a491";
+let bgcolor3 = "#00ff00";
 let key_to_press;
 let g_start, g_end;
 let animation_loop;
@@ -37,7 +39,7 @@ function init() {
 
     // Green zone
     ctx.beginPath();
-    ctx.strokeStyle = bgcolor2;
+    ctx.strokeStyle = correct === true? bgcolor3 : bgcolor2;
     ctx.lineWidth = 20;
     ctx.arc(W / 2, H / 2, 100, g_start - 90 * Math.PI / 180, g_end - 90 * Math.PI / 180, false);
     ctx.stroke();
@@ -46,12 +48,12 @@ function init() {
     let radians = degrees * Math.PI / 180;
     ctx.beginPath();
     ctx.strokeStyle = color;
-    ctx.lineWidth = 20;
-    ctx.arc(W / 2, H / 2, 100, 0 - 90 * Math.PI / 180, radians - 90 * Math.PI / 180, false);
+    ctx.lineWidth = 40;
+    ctx.arc(W / 2, H / 2, 90, radians - 0.1 - 90 * Math.PI / 180, radians - 90 * Math.PI / 180, false);
     ctx.stroke();
-
+// alterar para 2 se n der o 0.01
     // Adding the key_to_press
-    ctx.fillStyle = color;
+    ctx.fillStyle = txtcolor;
     ctx.font = "100px sans-serif";
     let text_width = ctx.measureText(key_to_press).width;
     ctx.fillText(key_to_press, W / 2 - text_width / 2, H / 2 + 35);
