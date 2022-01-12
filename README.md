@@ -1,5 +1,7 @@
 # qb-lockpick
  NoPixel Based Lockpick for QBFramework
+ all credits go to FjamZoo#0001, i only did an nopixel inpired reskin
+
 
 # Template
 exports['qb-lock']:StartLockPickCircle(amount, time, function(success)
