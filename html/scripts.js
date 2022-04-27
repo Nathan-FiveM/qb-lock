@@ -132,7 +132,7 @@ function startGame(time){
     let u = "fail";
         if(status)
             u = "success";
-    xhr.open("POST", `http://qb-lock/${u}`, true);
+    xhr.open("POST", `https://${GetParentResourceName()}/${u}`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({}));
     streak = 0;
